@@ -1,0 +1,17 @@
+/*funciones scss*/
+
+//1 se definen los colores que nos interesan
+$colors: ( primary: #DEEEB7, secundary: #C8C8C8, terciary: #403E3E);
+//se define la funcion, que en el momento que se instancie va a recibir un color
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+$padding: 15px;
+$borders: 1rem;
+// funcion y se le pasa el color
+body {
+    background: color(primary);
+    font-family: 'Montserrat', sans-serif;
+    margin: 10em;
+}
