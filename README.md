@@ -1,1 +1,1 @@
-# scss startet proyect
+# scss starter proyect
