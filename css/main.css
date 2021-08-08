@@ -1,1 +1,11 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+/*funciones scss*/
+body {
+  background-color: #C8C8C8;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+header {
+  border: 100rem;
+}
+/*# sourceMappingURL=main.css.map */
