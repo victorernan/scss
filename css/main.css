@@ -1,11 +1,97 @@
 /*funciones scss*/
 body {
-  background-color: #C8C8C8;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat';
+  font-size: 13px;
   margin: 0;
 }
 
-header {
-  border: 100rem;
+body header {
+  width: auto;
+}
+
+body header img {
+  max-width: 150px;
+  margin-top: 4px;
+  padding: 1em 0 2em 1em;
+}
+
+@media (min-width: 550px) {
+  body header img {
+    max-width: 200px;
+  }
+}
+
+body header .menu {
+  display: inline;
+  line-height: 20px;
+}
+
+body header .menu a {
+  text-decoration: none;
+}
+
+body header .menu ul {
+  list-style-type: none;
+}
+
+body header .menu li {
+  text-align: center;
+}
+
+body header .menu li a {
+  margin: 0 .1em;
+  padding: 0 .3em;
+}
+
+@media (min-width: 550px) {
+  body header .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+body .explore {
+  background-color: #e96985;
+  height: 30em;
+}
+
+body .explore .title {
+  padding-top: 2.5em;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 27px;
+}
+
+@media (min-width: 550px) {
+  body .explore .title {
+    letter-spacing: 7px;
+    font-size: 40px;
+  }
+}
+
+body .explore p {
+  padding-top: .5em;
+  color: #fff;
+  margin: 0 5em 0;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+body .explore .boton-work {
+  text-align: center;
+  width: auto;
+  margin-top: 2em;
+  padding-bottom: 2.7em;
+}
+
+body .explore .boton-work button {
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 2px 3px rgba(255, 0, 0, 0);
+          box-shadow: 1px 2px 3px rgba(255, 0, 0, 0);
+  border: 1px solid #e96985;
 }
 /*# sourceMappingURL=main.css.map */

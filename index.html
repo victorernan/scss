@@ -3,36 +3,47 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pruebas con sass </title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main-2.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            $("#menu-principal").load("navigation.html");
+            $("#menu-principal").addClass("menu");
+            $("#menu-secundario").load("navigation.html");
+            $("#menu-secundario").addClass("menu-dos");
+        });
+
+        function addNewItem() {
+            const li = '<li><a href="#">Buscar</a></li>';
+            $("#list").find("#menu-principal").append(li);
+        }
+    </script>
+
 </head>
 
 <body>
     <header>
-        <nav class="menu">
-            <ul>
-                <a href="#">
-                    <li>All</li>
-                </a>
-                <a href="#">
-                    <li>Branding</li>
-                </a>
-                <a href="#">
-                    <li>Web</li>
-                </a>
-                <a href="#">
-                    <li>Photography</li>
-                </a>
-
-            </ul>
-        </nav>
+        <img src="assets/logo.png" alt="logo">
+        <nav id="menu-principal"></nav>
     </header>
     <main>
-
-
+        <div class="explore">
+            <h1 class="title">EXPLORE BEYOND HORIZON</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic, dicta neque? </p>
+            <div class="boton-work">
+                <button>View our work</button>
+            </div>
+        </div>
+        <div class="second-menu">
+            <nav id="menu-secundario"></nav>
+        </div>
     </main>
+
 
 </body>
 

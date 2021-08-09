@@ -1,20 +1,90 @@
-/*funciones scss*/
-
-$colors: ( primary: #DEEEB7, secundary: #C8C8C8, terciary: #403E3E);
-//se define la funcion, que en el momento que se instancie va a recibir un color por parametro
-//en el return dos variables: los colores que se han definido y el del parametro
-@function color($nombreColor) {
-    @return map-get($colors, $nombreColor)
-}
-
-$padding: 15px;
-$borders: 100rem;
-body {
-    background-color: color(secundary);
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-}
-
-header {
-    border: $borders;
-}
+    /*funciones scss*/
+    
+    $colors: ( primary: #e96985, secundary: #fff, terciary: #403E3E);
+    //se define la funcion, que en el momento que se instancie va a recibir un color por parametro
+    //en el return dos variables: los colores que se han definido y el del parametro
+    @function color($nombreColor) {
+        @return map-get($colors, $nombreColor)
+    }
+    
+    $escritorio: 550px;
+    @mixin escritorio {
+        @media (min-width: #{$escritorio}) {
+            @content;
+        }
+    }
+    
+    $margin: .7em 0;
+    $padding: .6em 0;
+    $letter-spacing: 5px;
+    body {
+        font-family: 'Montserrat';
+        font-size: 13px;
+        margin: 0;
+        header {
+            width: auto;
+            img {
+                max-width: 150px;
+                margin-top: 4px;
+                padding: 1em 0 2em 1em;
+                @include escritorio {
+                    max-width: 200px;
+                }
+            }
+            .menu {
+                a {
+                    text-decoration: none;
+                }
+                ul {
+                    list-style-type: none;
+                }
+                display: inline;
+                line-height: 20px;
+                li {
+                    text-align: center;
+                    a {
+                        margin: 0 .1em;
+                        padding: 0 .3em;
+                    }
+                }
+                @include escritorio {
+                    display: flex;
+                }
+            }
+        }
+        .explore {
+            background-color: color(primary);
+            height: 30em;
+            .title {
+                padding-top: 2.5em;
+                color: color(secundary);
+                text-align: center;
+                letter-spacing: 3px;
+                font-size: 27px;
+                @include escritorio {
+                    letter-spacing: 7px;
+                    font-size: 40px;
+                }
+            }
+            p {
+                padding-top: .5em;
+                color: color(secundary);
+                margin: 0 5em 0;
+                text-align: center;
+                letter-spacing: 1px;
+            }
+            .boton-work {
+                text-align: center;
+                width: auto;
+                margin-top: 2em;
+                padding-bottom: 2.7em;
+                button {
+                    padding: 10px;
+                    text-transform: uppercase;
+                    border-radius: 10px;
+                    box-shadow: 1px 2px 3px rgba(255, 0, 0, 0);
+                    border: 1px solid color(primary);
+                }
+            }
+        }
+    }
