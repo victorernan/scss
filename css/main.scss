@@ -1,90 +1,142 @@
-    /*funciones scss*/
-    
-    $colors: ( primary: #e96985, secundary: #fff, terciary: #403E3E);
-    //se define la funcion, que en el momento que se instancie va a recibir un color por parametro
-    //en el return dos variables: los colores que se han definido y el del parametro
-    @function color($nombreColor) {
-        @return map-get($colors, $nombreColor)
+/*funciones scss*/
+
+$colors: ( primary: #e96985, secundary: #fff, terciary: #403E3E);
+@function color($nombreColor) {
+    @return map-get($colors, $nombreColor)
+}
+
+// variables
+$escritorio: 801px;
+$mediumScrean: 800px;
+$smal: 500px;
+@mixin smal {
+    @media (max-width: #{$smal}) {
+        @content;
     }
-    
-    $escritorio: 550px;
-    @mixin escritorio {
-        @media (min-width: #{$escritorio}) {
-            @content;
+}
+
+@mixin mediumScrean {
+    @media (max-width: #{$mediumScrean}) {
+        @content;
+    }
+}
+
+@mixin escritorio {
+    @media (min-width: #{$escritorio}) {
+        @content;
+    }
+}
+
+$margin: .7em 0;
+$padding: .6em 0;
+$letter-spacing: 5px;
+li {
+    a {
+        margin: 0.5em;
+        padding: 0.9em;
+        text-align: left;
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+a:hover {
+    background-color: color(primary);
+    color: color(secundary);
+    padding: 0.9em;
+    border-radius: 8px;
+}
+
+body {
+    font-family: 'Montserrat';
+    font-size: 13px;
+    margin: 0;
+    header {
+        display: grid;
+        grid-template-columns: 2;
+        grid-row: 1;
+        gap: 10px;
+        .logo {
+            grid-column: 1/2;
+            margin: auto;
         }
-    }
-    
-    $margin: .7em 0;
-    $padding: .6em 0;
-    $letter-spacing: 5px;
-    body {
-        font-family: 'Montserrat';
-        font-size: 13px;
-        margin: 0;
-        header {
-            width: auto;
-            img {
-                max-width: 150px;
-                margin-top: 4px;
-                padding: 1em 0 2em 1em;
-                @include escritorio {
-                    max-width: 200px;
-                }
-            }
+        .navegacion {
+            grid-column: 2/2;
+            margin: auto;
             .menu {
-                a {
-                    text-decoration: none;
+                @include smal {
+                    display: inline-block;
+                    line-height: 10px;
+                    background-color: gold;
                 }
-                ul {
-                    list-style-type: none;
-                }
-                display: inline;
-                line-height: 20px;
                 li {
-                    text-align: center;
-                    a {
-                        margin: 0 .1em;
-                        padding: 0 .3em;
+                    @include mediumScrean {
+                        display: inline;
+                        margin-top: 1em;
+                    }
+                    @include escritorio {
+                        //float: right;
+                        margin-top: 1em;
+                        display: inline;
                     }
                 }
-                @include escritorio {
-                    display: flex;
-                }
-            }
-        }
-        .explore {
-            background-color: color(primary);
-            height: 30em;
-            .title {
-                padding-top: 2.5em;
-                color: color(secundary);
-                text-align: center;
-                letter-spacing: 3px;
-                font-size: 27px;
-                @include escritorio {
-                    letter-spacing: 7px;
-                    font-size: 40px;
-                }
-            }
-            p {
-                padding-top: .5em;
-                color: color(secundary);
-                margin: 0 5em 0;
-                text-align: center;
-                letter-spacing: 1px;
-            }
-            .boton-work {
-                text-align: center;
-                width: auto;
-                margin-top: 2em;
-                padding-bottom: 2.7em;
-                button {
-                    padding: 10px;
-                    text-transform: uppercase;
-                    border-radius: 10px;
-                    box-shadow: 1px 2px 3px rgba(255, 0, 0, 0);
-                    border: 1px solid color(primary);
-                }
             }
         }
     }
+}
+
+.explore {
+    background-color: color(primary);
+    .title {
+        padding-top: 1.5em;
+        color: color(secundary);
+        text-align: center;
+        letter-spacing: 3px;
+        font-size: 20px;
+        @include mediumScrean {
+            letter-spacing: 5px;
+            font-size: 28px;
+        }
+        @include escritorio {
+            letter-spacing: 7px;
+            font-size: 40px;
+        }
+    }
+    p {
+        padding-top: .5em;
+        color: color(secundary);
+        margin: 0 5em 0;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    .boton-work {
+        text-align: center;
+        width: auto;
+        margin-top: 2em;
+        padding-bottom: 3em;
+        button {
+            padding: 10px;
+            text-transform: uppercase;
+            border-radius: 10px;
+            box-shadow: 1px 2px 3px rgba(255, 0, 0, 0);
+            border: 1px solid color(primary);
+        }
+    }
+}
+
+.social {
+    text-align: center;
+    width: auto;
+    margin: 2em 0;
+    i {
+        margin: 0 .1em;
+        padding: 0 .3em;
+        color: grey;
+        text-shadow: 1px 1px 1px #ccc;
+        font-size: 1.5em;
+    }
+}
