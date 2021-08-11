@@ -9,36 +9,39 @@
     <title>pruebas con sass </title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/main-2.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script>
-        $(function() {
+        $(document).ready(function() {
+
             $("#menu-principal").load("navigation.html");
             $("#menu-principal").addClass("menu");
             $("#menu-secundario").load("navigation.html");
             $("#menu-secundario").addClass("menu-dos");
-        });
 
-        function addNewItem() {
             const li = '<li><a href="#">Buscar</a></li>';
             $("#list").find("#menu-principal").append(li);
-        }
+        });
     </script>
 
 </head>
 
 <body>
     <header>
-        <div class="logo">
+        <figure class="logo">
             <img src="assets/logo.png" width="70%" alt="logo">
-        </div>
+        </figure>
         <div class="navegacion">
+            <input type="checkbox" id="menuToggle">
+            <label for="menuToggle" class="menu-icon"><i class="fa fa-bars"></i></label>
             <nav id="menu-principal"></nav>
         </div>
     </header>
+
     <main>
+
         <div class="explore">
             <h1 class="title">EXPLORE BEYOND HORIZON</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic, dicta neque? </p>
@@ -46,17 +49,34 @@
                 <button>View our work</button>
             </div>
         </div>
+
         <div class="second-menu">
             <nav id="menu-secundario"></nav>
         </div>
-        <div class="social">
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-google"></i>
-        </div>
-    </main>
 
+        <section class="fotos">
+            <div class="grid"></div>
+        </section>
+
+        <footer class="footer">
+            <div class="social">
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-google"></i>
+            </div>
+            <div class="rights">
+                <p>&copy;
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                    <span id="sneak">Sneak</span> All Rights Reserved
+                </p>
+            </div>
+        </footer>
+
+    </main>
+    <script type="module" src="js/sneak-creative.js"></script>
 
 </body>
 

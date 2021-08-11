@@ -8,7 +8,7 @@ $colors: ( primary: #e96985, secundary: #fff, terciary: #403E3E);
 // variables
 $escritorio: 801px;
 $mediumScrean: 800px;
-$smal: 500px;
+$smal: 570px;
 @mixin smal {
     @media (max-width: #{$smal}) {
         @content;
@@ -33,10 +33,11 @@ $letter-spacing: 5px;
 li {
     a {
         margin: 0.5em;
-        padding: 0.9em;
+        padding: 0.4em;
         text-align: left;
         text-decoration: none;
         color: inherit;
+        font-size: 16px;
     }
 }
 
@@ -68,15 +69,28 @@ body {
             grid-column: 2/2;
             margin: auto;
             .menu {
-                @include smal {
-                    display: inline-block;
-                    line-height: 10px;
-                    background-color: gold;
+                .menu-icon i {
+                    font-size: 1.7em;
+                }
+                ul {
+                    @include smal {
+                        display: block;
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: max-height 0.3s;
+                        clear: both;
+                        border-radius: 10px;
+                    }
                 }
                 li {
+                    @include smal {
+                        line-height: 10px;
+                        display: inline-block;
+                    }
                     @include mediumScrean {
                         display: inline;
                         margin-top: 1em;
+                        text-align: left;
                     }
                     @include escritorio {
                         //float: right;
@@ -128,15 +142,37 @@ body {
     }
 }
 
-.social {
+.footer {
     text-align: center;
     width: auto;
-    margin: 2em 0;
-    i {
-        margin: 0 .1em;
-        padding: 0 .3em;
-        color: grey;
-        text-shadow: 1px 1px 1px #ccc;
-        font-size: 1.5em;
+    .rights {
+        font-size: 12px;
+    }
+    .social {
+        text-align: center;
+        width: auto;
+        margin: 2em 0;
+        i {
+            margin: 0 .1em;
+            padding: 0 .3em;
+            color: grey;
+            text-shadow: 1px 1px 1px #ccc;
+            font-size: 1.5em;
+        }
+    }
+}
+
+@include smal {
+    #menuToggle:checked~ul {
+        max-height: 300px;
+    }
+    .menu-icon {
+        width: 100px;
+        height: inherit;
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 0;
+        line-height: 60px;
     }
 }
