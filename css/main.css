@@ -1,11 +1,11 @@
 /*funciones scss*/
 li a {
-  margin: 0.5em;
+  margin: 0.4em;
   padding: 0.4em;
   text-align: left;
   text-decoration: none;
   color: inherit;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 ul {
@@ -15,8 +15,8 @@ ul {
 a:hover {
   background-color: #e96985;
   color: #fff;
-  padding: 0.9em;
   border-radius: 8px;
+  opacity: 1;
 }
 
 body {
@@ -54,13 +54,10 @@ body header .navegacion .menu .menu-icon i {
 
 @media (max-width: 570px) {
   body header .navegacion .menu ul {
-    display: block;
-    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: max-height 0.3s;
-    transition: max-height 0.3s;
-    clear: both;
-    border-radius: 10px;
+    display: inline;
+    text-align: center;
+    border-radius: 2px;
+    margin-left: 0;
   }
 }
 
@@ -86,11 +83,12 @@ body header .navegacion .menu .menu-icon i {
   }
 }
 
-.explore {
+body .explore {
   background-color: #e96985;
+  margin-bottom: 2em;
 }
 
-.explore .title {
+body .explore .title {
   padding-top: 1.5em;
   color: #fff;
   text-align: center;
@@ -99,20 +97,20 @@ body header .navegacion .menu .menu-icon i {
 }
 
 @media (max-width: 800px) {
-  .explore .title {
+  body .explore .title {
     letter-spacing: 5px;
     font-size: 28px;
   }
 }
 
 @media (min-width: 801px) {
-  .explore .title {
+  body .explore .title {
     letter-spacing: 7px;
     font-size: 40px;
   }
 }
 
-.explore p {
+body .explore p {
   padding-top: .5em;
   color: #fff;
   margin: 0 5em 0;
@@ -120,14 +118,14 @@ body header .navegacion .menu .menu-icon i {
   letter-spacing: 1px;
 }
 
-.explore .boton-work {
+body .explore .boton-work {
   text-align: center;
   width: auto;
   margin-top: 2em;
   padding-bottom: 3em;
 }
 
-.explore .boton-work button {
+body .explore .boton-work button {
   padding: 10px;
   text-transform: uppercase;
   border-radius: 10px;
@@ -136,22 +134,58 @@ body header .navegacion .menu .menu-icon i {
   border: 1px solid #e96985;
 }
 
-.footer {
+@media (max-width: 800px) {
+  body .fotos {
+    margin: 2em 4em;
+  }
+}
+
+@media (min-width: 801px) {
+  body .fotos {
+    margin: 2em 20em;
+  }
+}
+
+body .fotos .grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+@media (max-width: 800px) {
+  body .fotos .grid {
+    -ms-grid-columns: (2fr)[2];
+        grid-template-columns: repeat(2, 2fr);
+  }
+}
+
+@media (min-width: 801px) {
+  body .fotos .grid {
+    -ms-grid-columns: (2fr)[3];
+        grid-template-columns: repeat(3, 2fr);
+  }
+}
+
+body .fotos .grid .grid-item {
+  text-align: center;
+  padding: 10px;
+}
+
+body .footer {
   text-align: center;
   width: auto;
 }
 
-.footer .rights {
+body .footer .rights {
   font-size: 12px;
 }
 
-.footer .social {
+body .footer .social {
   text-align: center;
   width: auto;
   margin: 2em 0;
 }
 
-.footer .social i {
+body .footer .social i {
   margin: 0 .1em;
   padding: 0 .3em;
   color: grey;
@@ -159,18 +193,9 @@ body header .navegacion .menu .menu-icon i {
   font-size: 1.5em;
 }
 
-@media (max-width: 570px) {
-  #menuToggle:checked ~ ul {
-    max-height: 300px;
-  }
-  .menu-icon {
-    width: 100px;
-    height: inherit;
-    display: block;
-    position: absolute;
-    top: 30px;
-    right: 0;
-    line-height: 60px;
+@media (min-width: 801px) {
+  body a {
+    font-size: 18px;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -5,7 +5,6 @@ $colors: ( primary: #e96985, secundary: #fff, terciary: #403E3E);
     @return map-get($colors, $nombreColor)
 }
 
-// variables
 $escritorio: 801px;
 $mediumScrean: 800px;
 $smal: 570px;
@@ -32,12 +31,12 @@ $padding: .6em 0;
 $letter-spacing: 5px;
 li {
     a {
-        margin: 0.5em;
+        margin: 0.4em;
         padding: 0.4em;
         text-align: left;
         text-decoration: none;
         color: inherit;
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -48,8 +47,8 @@ ul {
 a:hover {
     background-color: color(primary);
     color: color(secundary);
-    padding: 0.9em;
     border-radius: 8px;
+    opacity: 1;
 }
 
 body {
@@ -74,12 +73,10 @@ body {
                 }
                 ul {
                     @include smal {
-                        display: block;
-                        max-height: 0;
-                        overflow: hidden;
-                        transition: max-height 0.3s;
-                        clear: both;
-                        border-radius: 10px;
+                        display: inline;
+                        text-align: center;
+                        border-radius: 2px;
+                        margin-left: 0;
                     }
                 }
                 li {
@@ -93,7 +90,6 @@ body {
                         text-align: left;
                     }
                     @include escritorio {
-                        //float: right;
                         margin-top: 1em;
                         display: inline;
                     }
@@ -101,78 +97,91 @@ body {
             }
         }
     }
-}
-
-.explore {
-    background-color: color(primary);
-    .title {
-        padding-top: 1.5em;
-        color: color(secundary);
-        text-align: center;
-        letter-spacing: 3px;
-        font-size: 20px;
+    .explore {
+        background-color: color(primary);
+        margin-bottom: 2em;
+        .title {
+            padding-top: 1.5em;
+            color: color(secundary);
+            text-align: center;
+            letter-spacing: 3px;
+            font-size: 20px;
+            @include mediumScrean {
+                letter-spacing: 5px;
+                font-size: 28px;
+            }
+            @include escritorio {
+                letter-spacing: 7px;
+                font-size: 40px;
+            }
+        }
+        p {
+            padding-top: .5em;
+            color: color(secundary);
+            margin: 0 5em 0;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .boton-work {
+            text-align: center;
+            width: auto;
+            margin-top: 2em;
+            padding-bottom: 3em;
+            button {
+                padding: 10px;
+                text-transform: uppercase;
+                border-radius: 10px;
+                box-shadow: 1px 2px 3px rgba(255, 0, 0, 0);
+                border: 1px solid color(primary);
+            }
+        }
+    }
+    .fotos {
+        // @include smal {
+        //     margin: 1em .1em;
+        // }
         @include mediumScrean {
-            letter-spacing: 5px;
-            font-size: 28px;
+            margin: 2em 4em;
         }
         @include escritorio {
-            letter-spacing: 7px;
-            font-size: 40px;
+            margin: 2em 20em;
+        }
+        .grid {
+            display: grid;
+            @include mediumScrean {
+                grid-template-columns: repeat(2, 2fr);
+            }
+            @include escritorio {
+                grid-template-columns: repeat(3, 2fr);
+            }
+            .grid-item {
+                text-align: center;
+                padding: 10px;
+            }
         }
     }
-    p {
-        padding-top: .5em;
-        color: color(secundary);
-        margin: 0 5em 0;
-        text-align: center;
-        letter-spacing: 1px;
-    }
-    .boton-work {
-        text-align: center;
-        width: auto;
-        margin-top: 2em;
-        padding-bottom: 3em;
-        button {
-            padding: 10px;
-            text-transform: uppercase;
-            border-radius: 10px;
-            box-shadow: 1px 2px 3px rgba(255, 0, 0, 0);
-            border: 1px solid color(primary);
-        }
-    }
-}
-
-.footer {
-    text-align: center;
-    width: auto;
-    .rights {
-        font-size: 12px;
-    }
-    .social {
+    .footer {
         text-align: center;
         width: auto;
-        margin: 2em 0;
-        i {
-            margin: 0 .1em;
-            padding: 0 .3em;
-            color: grey;
-            text-shadow: 1px 1px 1px #ccc;
-            font-size: 1.5em;
+        .rights {
+            font-size: 12px;
+        }
+        .social {
+            text-align: center;
+            width: auto;
+            margin: 2em 0;
+            i {
+                margin: 0 .1em;
+                padding: 0 .3em;
+                color: grey;
+                text-shadow: 1px 1px 1px #ccc;
+                font-size: 1.5em;
+            }
         }
     }
-}
-
-@include smal {
-    #menuToggle:checked~ul {
-        max-height: 300px;
-    }
-    .menu-icon {
-        width: 100px;
-        height: inherit;
-        display: block;
-        position: absolute;
-        top: 30px;
-        right: 0;
-        line-height: 60px;
+    @include escritorio {
+        a {
+            font-size: 18px;
+        }
     }
 }

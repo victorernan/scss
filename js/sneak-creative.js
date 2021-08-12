@@ -12,9 +12,12 @@ function eventosListener() {
 }
 
 function mostrarfotos(imagenes) {
+    sortImagenes(imagenes);
+
     imagenes.forEach(iterador => {
         //destructory is not working
         //const { name, desc } = imagenes;
+
         const div = document.createElement('div');
         div.classList.add('grid-item');
 
@@ -27,6 +30,8 @@ function mostrarfotos(imagenes) {
         pics.appendChild(div);
 
     });
+}
 
-
+function sortImagenes(x) {
+    x = x.sort(() => Math.random() - 0.5);
 }
